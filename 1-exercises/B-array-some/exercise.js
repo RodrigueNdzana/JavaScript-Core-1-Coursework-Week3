@@ -8,6 +8,17 @@
 
 var pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
+//checking if there is any null value in the array
+const checkElement=pairsByIndex.some(checkArr => checkArr===null);
+console.log(checkElement);
+
+// And if the null exist, exit the program code
+if(checkElement===true){
+  process.exit();
+}
+else{
+  return [student, mentor];
+};
 // If there is a null value in the array exit the program with the error code
 // https://nodejs.org/api/process.html#process_process_exit_code
 // process.exit(1);
