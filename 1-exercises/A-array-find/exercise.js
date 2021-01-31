@@ -16,10 +16,15 @@ var names = [
   "Karim",
   "Ahmed",
 ];
-
-var longNameThatStartsWithA = findLongNameThatStartsWithA(names);
-
+function findLongNameThatStartsWithA(name){
+  return name.length > 7;   // this will search through an array to see the first value whose names is greater than 7
+}
+var longNameThatStartsWithA = names.find(findLongNameThatStartsWithA);
 console.log(longNameThatStartsWithA);
+
+/* Another ways of doing this using EcmaScript 6 (ES 6) arrow function
+const longerName=names.find(findLonger => findLonger.length > 7)
+console.log(longerName);*/
 
 /* EXPECTED OUTPUT */
 // "Alexandra"
