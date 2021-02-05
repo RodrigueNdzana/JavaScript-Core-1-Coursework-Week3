@@ -20,8 +20,8 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +64,10 @@ function checkCodeIsThere(stringText) {
   
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(transport) {
+  let transportModeResult= transport.slice(1);
+  return transportModeResult;
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +84,13 @@ function getTransportModes() {}
     
   Hint: Use the corresponding array method to decide if an element is member of an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(arrTransport, string) {
+  if(arrTransport[0]==string[0]){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +101,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(locate) {
+  return locate[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -123,6 +134,9 @@ function getLocationName() {}
 */
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
+  let filterArrBasedOnLocation=locations.filter(arr => arr.includes(transportMode));
+  let returnInFormOfAnArr= filterArrBasedOnLocation.map(el => el[0])
+  return returnInFormOfAnArr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

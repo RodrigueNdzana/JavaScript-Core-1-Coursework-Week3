@@ -21,10 +21,28 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
+const upperCaseLetter=/[A-Z]/;
+const lowerCaseLetter=/[a-z]/;
+const oneNumber=/[0-9]/;
+const nonAlphanumericSymbol= /[!#$%.*&]/;
 
 function validatePasswords(passwords) {
-
+  let check = passwords.map((element, index) => {
+      if(element.length >= 5 &&
+        upperCaseLetter.test(element) &&       
+        lowerCaseLetter.test(element) &&       
+        oneNumber.test(element) &&       
+        nonAlphanumericSymbol.test(element) &&   
+        passwords.indexOf(element) === index) {
+              return true;
+          }
+          else {
+              return false;
+          }
+  });
+  return check;
 }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

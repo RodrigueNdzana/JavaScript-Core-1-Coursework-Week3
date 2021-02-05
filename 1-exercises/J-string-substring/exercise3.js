@@ -7,8 +7,9 @@
 */
 
 let statement = "I do not like programming";
-
-let result = "";
+let extra=statement.substring(0,4)   // extra I do like
+let restOfStatement=statement.substring(9); // extra like programming
+let result = `${extra} ${restOfStatement}`;  // combine the two sentences
 
 console.log(result);
 

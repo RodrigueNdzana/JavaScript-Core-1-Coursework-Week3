@@ -10,8 +10,17 @@
 
     Some string methods that might help you here are .replace() and .substring(). 
 */
-
-function safeLevels() {}
+// parseFloat() would convert the string to a floating point number
+function safeLevels(oxygen) {
+  // convert a string to a Number using the parseFloat() method
+   let convertToNum=oxygen.map(function(numbersInArr){
+     return parseFloat(numbersInArr);
+   })
+   // use the filter() to filter the lower value between 19.5 and 23.5
+   let filterNum= convertToNum.filter(elementInArr => elementInArr > 19.5 && elementInArr < 23.5);
+   return `${filterNum[0]} %`;
+  //return oxygen.find(element => parseFloat(element) > 19.5 && parseFloat(element) < 23.5)
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

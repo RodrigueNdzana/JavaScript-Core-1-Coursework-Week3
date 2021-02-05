@@ -8,9 +8,21 @@
 */
 
 function eligibleStudents() {
-
+  let StudentWhoAttend= attendances.filter(students => students[1] >=8);
+  return StudentWhoAttend.map(namesOfThoseStudent => namesOfThoseStudent[0])
 }
-
+/* Another solution
+function eligibleStudents() {
+  let emptyArray=[];
+  attendances.forEach(function(el){
+    while(el[1] >=8){
+      emptyArray.push(el[0])
+      el++;
+    }
+  })
+  return emptyArray;
+}
+*/
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const attendances = [

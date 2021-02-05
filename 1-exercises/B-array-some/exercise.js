@@ -16,9 +16,9 @@ console.log(checkElement);
 if(checkElement===true){
   process.exit();
 }
-else{
-  return [student, mentor];
-};
+// else{
+//   return [student, mentor];
+// };
 // If there is a null value in the array exit the program with the error code
 // https://nodejs.org/api/process.html#process_process_exit_code
 // process.exit(1);

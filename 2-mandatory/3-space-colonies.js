@@ -15,7 +15,15 @@
   
 */
 
-function colonisers() {}
+//every//includes
+function colonisers() {
+  let startByA="A"; 
+  let endByFamily="family";
+  // the filter method starting at the first index to check the values that start by 'A' and .includes method to check if it had family
+  let result=voyagers.filter(el => el[0]== startByA && el.includes( endByFamily));
+  return result;
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -35,6 +43,7 @@ const voyagers = [
 ];
 
 const util = require("util");
+const { Z_FILTERED } = require("zlib");
 
 function test(test_name, actual, expected) {
   let status;
